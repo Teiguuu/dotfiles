@@ -1,0 +1,62 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+    border: none;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* Общий стиль для всех кнопок/модулей */
+#clock, 
+#network, 
+#temperature, 
+#workspaces, 
+#pulseaudio, 
+#battery, 
+#bluetooth, 
+#custom-power, 
+#custom-battery_limit,
+#custom-backlight_down,
+#custom-backlight_up {
+    background: rgba(0, 0, 0, 0.7);
+    color: @color7;
+    border: 2px solid @color1;
+    border-radius: 20px;
+    
+    /* Тот самый отступ: 4px сверху/снизу и 15px по бокам */
+    padding: 4px 15px;
+    margin: 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: @color7;
+}
+
+#workspaces button.active {
+    background: @color1;
+    color: @background;
+    border-radius: 15px;
+}
+
+/* Цвета модулей */
+#temperature { color: @color5; }
+#network { color: @color4; }
+#pulseaudio { color: @color3; }
+#battery { color: @color2; }
+#custom-power { color: #e74c3c; }
+
+/* Специфичные цвета для батареи и яркости */
+#custom-battery_limit.enabled { color: #89b4fa; }
+#custom-battery_limit.disabled { color: #f38ba8; }
+#custom-backlight_down, #custom-backlight_up { color: #f9e2af; }
+
+/* Эффект при наведении */
+#custom-backlight_down:hover, #custom-backlight_up:hover, #custom-power:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

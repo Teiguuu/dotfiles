@@ -1,0 +1,51 @@
+window {{
+    margin: 0px;
+    border: 2px solid {color1};
+    background-color: rgba(15, 15, 15, 0.9);
+    border-radius: 20px;
+    font-family: "JetBrainsMono Nerd Font";
+    /* ПРИНУДИТЕЛЬНЫЙ ОТСТУП ОТ РАМКИ */
+    padding: 20px; 
+}}
+
+#input {{
+    margin-bottom: 20px; /* Отступ строки поиска от списка */
+    border: none;
+    color: {color7};
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 12px;
+}}
+
+#inner-box {{
+    /* Убираем все лишнее, чтобы не мешало отступам */
+    margin: 0px;
+}}
+
+#entry {{
+    padding: 15px; /* Размер каждой плашки приложения */
+    border-radius: 12px;
+    margin-bottom: 10px; /* Расстояние между приложениями */
+    border: 2px solid transparent; /* Заготовка, чтобы при выделении не прыгало */
+}}
+
+#entry:selected {{
+    background-color: {color1};
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}}
+
+#text {{
+    margin-left: 15px;
+    color: {color7};
+    font-size: 16px;
+    vertical-align: center;
+}}
+
+#text:selected {{
+    color: #ffffff;
+    font-weight: bold;
+}}
+
+#img {{
+    margin-right: 5px;
+}}

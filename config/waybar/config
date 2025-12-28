@@ -1,0 +1,90 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    "modules-left": [
+        "custom/backlight_down", 
+        "custom/backlight_up", 
+        "clock", 
+        "network", 
+        "temperature"
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "pulseaudio", 
+        "battery", 
+        "custom/battery_limit", 
+        "bluetooth", 
+        "custom/power"
+    ],
+
+    "custom/backlight_down": {
+        "format": "󰃞",
+        "on-click": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+
+    "custom/backlight_up": {
+        "format": "󰃠",
+        "on-click": "brightnessctl set +5%",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰖪 off",
+        "on-click": "nm-connection-editor"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": " off",
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/battery_limit": {
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "/home/teigu/.config/hypr/scripts/battery_limit.sh 80",
+        "on-click-right": "/home/teigu/.config/hypr/scripts/battery_limit.sh 100",
+        "exec": "/home/teigu/.config/hypr/scripts/bat_status.sh",
+        "interval": 10,
+        "signal": 8
+    },
+
+    "clock": {
+        "format": "{:%H:%M  |  %d %b}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout"
+    }
+}
